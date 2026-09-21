@@ -3,7 +3,7 @@
 This program estimates the equity (expected share of the pot) of a specific hand
 against a random hand in a 2 player game of Texas Hold'em (a poker variant)
 
-# What the program does
+## What the program does
 
 It has multiple options:
 1. Given your hand, the program will randomly deal the remaining cards in the deck a
@@ -16,7 +16,7 @@ corresponding equities over a chosen number of trials.
 An example output:
 Ah As -> 84.94% ± 0.70% (Ah As corresponds to ace of hearts and ace of spades)
 
-# How the program works
+## How the program works
 
 1. Firstly, it removes the already known cards from the deck. These are the cards in your
 hand and any known opponent or board cards.
@@ -34,7 +34,7 @@ gauged whether they are consistent with the given margin.
 6. To obtain the table of results of equity for each hand, a function loops and creates all
 169 different hands (13 pairs, 78 suited cards, 78 offsuited cards) and tests each one.
 
-# An example output with margin included
+## An example output with margin included
 
 10000 trials per hand
 | Hand | Equity | Published | Margin | Result |
@@ -56,12 +56,12 @@ Requires Python 3, no external libraries.
 - `python checkers.py`: the symmetry check
 - `python test.py`: evaluator tests
 
-# Testing
+## Testing
 This checks the evaluator against specific examples - it tests every hand type, tests the wheel 
 (A-2-3-4-5 straight) and for tiebrakers in the case of a 4 pair or a pair of 2 pairs. There are 25
 tests and all 25 pass.
 
-# Other
+## Other
 
 The equity of all 169 hand types, averaged with weights, should be 0.5 in a 2-player game, because 
 each pot is shared between the two players (their shares sum to 1) and neither player has an advantage 
@@ -74,7 +74,7 @@ of hands and is given by 52C2 = 1326) as suits are interchangeable and no suit o
 for example, the hand 9h 8d is equivalent to 9s 8h enabling the run time to be cut down by a large
 amount.
 
-# What each file does
+## What each file does
 
 Cards.py -> converts text input into tuples which the program understands, contains the full deck of cards
             and the list of all ranks and suits.
@@ -84,7 +84,7 @@ Results.py -> contains the table of results for all 169 hand types.
 Checkers.py -> contains the check for the expected average score.
 Test.py -> tests the program.
 
-# Limitations
+## Limitations
 
 - This program only works for a 2 person game.
 - The equity calculation ignores folding which is highly unrealistic.
